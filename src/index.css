@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .sr-button {
+    @apply sr-no-underline sr-cursor-pointer sr-text-sm sr-px-0 sr-py-0 sr-bg-white sr-font-medium sr-whitespace-nowrap sr-justify-center sr-flex sr-gap-1  sr-text-center sr-inline-flex sr-items-center sr-rounded-md sr-border sr-border-transparent focus:sr-outline-none focus:sr-ring-1 focus:sr-ring-white focus:sr-ring-offset-1;
+  }
+  .sr-button-outline {
+    @apply sr-bg-white sr-border-gray-300 sr-border-solid sr-text-gray-700 hover:sr-bg-gray-50 sr-px-4 sr-py-2 sr-border;
+  }
+  .sr-paragraph-small {
+    @apply sr-text-sm  sr-text-gray-800;
+  }
+  .sr-paragraph-regular {
+    @apply sr-text-base sr-text-gray-800;
+  }
+  .sr-paragraph-large {
+    @apply tsr-ext-lg sr-text-gray-800;
+  }
+
+  .sr-heading-xsmall {
+    @apply sr-text-base sr-font-semibold  sr-text-gray-900 sr-my-0;
+  }
+  .sr-heading-small {
+    @apply sr-text-lg sr-font-semibold  sr-text-gray-900 sr-my-0;
+  }
+  .sr-heading-regular {
+    @apply sr-text-xl sr-font-semibold sr-tracking-tight sr-text-gray-800 sr-my-0;
+  }
+  .sr-heading-large {
+    @apply sr-text-2xl sr-font-semibold sr-tracking-tight sr-text-gray-800 sr-my-0;
+  }
+}

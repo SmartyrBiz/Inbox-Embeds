@@ -19,13 +19,14 @@ window.addEventListener("load", function () {
     .then((response) => response.json())
     .then((data) => {
       loading = false;
-      console.log(data);
       const filteredReviews = data.reviews.filter((review: any) => {
-        return review.rating === "FIVE" && review.comment;
+        return (
+          (review.rating === "FIVE" || review.rating === "FOUR") &&
+          review.comment
+        );
       });
       renderReactApps({ ...data, reviews: filteredReviews }, loading);
       renderSchema(data);
-      console.log("Success");
     });
 
   function renderReactApps(data: ReviewAPIData, loading: boolean) {

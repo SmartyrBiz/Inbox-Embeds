@@ -4,20 +4,16 @@ import {
   StarIcon,
 } from "@heroicons/react/24/solid";
 import { dateFormatter } from "../utilities/dateFormatter";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType, Navigation, Pagination, Autoplay } from "swiper";
-import { ReviewAPIData } from "../utilities/types";
 import RATINGS from "../utilities/RATINGS";
 import Loading from "../utilities/LoadingSpinner";
 import "swiper/swiper.min.css";
 import "swiper/swiper-bundle.min.css";
-/* import "swiper/css/pagination"; */
-/* import "swiper/css/navigation"; */
 
 export default function ReviewSlider({ data, loading }: any) {
   const swiperRef = useRef<SwiperType>();
-
   return (
     <>
       {loading && (
@@ -95,7 +91,7 @@ export default function ReviewSlider({ data, loading }: any) {
             >
               {data.reviews.slice(0, 15).map((review: any) => {
                 return (
-                  <SwiperSlide className="">
+                  <SwiperSlide key={review.name}>
                     <div className="sr-p-6 sr-bg-white sr-border sr-rounded-md sr-h-full sr-flex sr-flex-col sr-justify-between">
                       <div>
                         <div className="sr-flex sr-place-items-center sr-gap-2 sr-mb-4">
@@ -113,8 +109,11 @@ export default function ReviewSlider({ data, loading }: any) {
                                 RATINGS[review.rating as keyof typeof RATINGS]
                               )
                                 .fill(null)
-                                .map(() => (
-                                  <StarIcon className="sr-h-5 sr-w-5 sr-text-yellow-500" />
+                                .map((star, index) => (
+                                  <StarIcon
+                                    className="sr-h-5 sr-w-5 sr-text-yellow-500"
+                                    key={index}
+                                  />
                                 ))}
                             </div>
                           </div>

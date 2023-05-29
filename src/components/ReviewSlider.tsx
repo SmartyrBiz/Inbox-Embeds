@@ -29,8 +29,8 @@ export default function ReviewSlider({ data, loading }: any) {
               <h2 className="sr-heading-large">Our Latest Google Reviews</h2>
 
               <p className="sr-mt-0 sr-py-0 sr-mb-0">
-                Rated {data.averageRating} Stars from {data.totalReviewCount}{" "}
-                reviews
+                Rated {String(data.averageRating).slice(0, 4)} Stars from{" "}
+                {data.totalReviewCount} reviews
               </p>
             </div>
             <div className="sr-flex sr-gap-2">
@@ -52,7 +52,7 @@ export default function ReviewSlider({ data, loading }: any) {
           </div>
           <div className="sr-flex sr-gap-2 sr-place-items-center">
             <button
-              className="sr-flex sr-place-items-center sr-justify-center sr-flex-shrink-0 sr-rounded-full sr-border-none sr-p-2 hover:sr-bg-gray-50 transition-ease sr-bg-white duration-300 sr-cursor-pointer"
+              className="duration-300 sr-flex sr-place-items-center sr-justify-center sr-flex-shrink-0 sr-rounded-full sr-border-none sr-p-2 hover:sr-bg-gray-50 transition-ease sr-bg-white sr-cursor-pointer"
               onClick={() => swiperRef.current?.slidePrev()}
             >
               <ChevronLeftIcon className="sr-h-6 sr-w-6 " />
@@ -162,7 +162,7 @@ export default function ReviewSlider({ data, loading }: any) {
               <div className="swiper-pagination-custom sr-justify-center sr-flex sr-mt-4 sr-flex-shrink-0"></div>
             </Swiper>
             <button
-              className="sr-flex sr-place-items-center sr-justify-center sr-flex-shrink-0 sr-rounded-full sr-border-none sr-p-2 hover:sr-bg-gray-50 transition-ease sr-bg-white duration-300 sr-cursor-pointer"
+              className="duration-300 sr-flex sr-place-items-center sr-justify-center sr-flex-shrink-0 sr-rounded-full sr-border-none sr-p-2 hover:sr-bg-gray-50 transition-ease sr-bg-white sr-cursor-pointer"
               onClick={() => swiperRef.current?.slideNext()}
             >
               <ChevronRightIcon className="sr-h-6 sr-w-6 " />

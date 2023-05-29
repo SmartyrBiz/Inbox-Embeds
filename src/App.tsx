@@ -1,3 +1,4 @@
+import "./App.css";
 import React, { useEffect, useState } from "react";
 import ReviewSlider from "./components/ReviewSlider";
 import ReviewWidget from "./components/ReviewWidget";

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Loading from "../utilities/LoadingSpinner";
 
 enum Experience {
   positive = "positive",
@@ -219,22 +220,27 @@ export default function FeedbackWizard({ data, postTo, loading }: any) {
   }
 
   return (
-    <div>
-      {!experience ? (
+    <>
+      {loading && <Loading />}
+      {!loading && data && (
         <div>
-          <h1 className="sr-header-large">How was your experience?</h1>
-          <p className="">
-            We value your feedback! Please take a moment to let us know about
-            your experience with our service.
-          </p>
-          <ExperienceSelector />
-        </div>
-      ) : (
-        <div>
-          {experience === Experience.positive && <PositiveReview />}
-          {experience === Experience.negative && <NegativeReview />}
+          {!experience ? (
+            <div>
+              <h1 className="sr-header-large">How was your experience?</h1>
+              <p className="">
+                We value your feedback! Please take a moment to let us know
+                about your experience with our service.
+              </p>
+              <ExperienceSelector />
+            </div>
+          ) : (
+            <div>
+              {experience === Experience.positive && <PositiveReview />}
+              {experience === Experience.negative && <NegativeReview />}
+            </div>
+          )}
         </div>
       )}
-    </div>
+    </>
   );
 }

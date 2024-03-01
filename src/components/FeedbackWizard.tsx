@@ -1,6 +1,10 @@
 import { useState } from "react";
 import Loading from "../utilities/LoadingSpinner";
-import { CheckCircleIcon, MinusCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
+import {
+  CheckCircleIcon,
+  MinusCircleIcon,
+  XCircleIcon,
+} from "@heroicons/react/24/solid";
 
 enum Experience {
   positive = "Excellent",
@@ -49,8 +53,8 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
 
   const PositiveReview = () => (
     <div>
-      <div className="sr-mb-6">
-        <h1 className="sr-font-semibold">Thank you!</h1>
+      <div className="sr-mb-8">
+        <h1 className="sr-font-semibold sr-text-2xl mb-1">Thank you!</h1>
         <p>
           We're thrilled to hear that you had an excellent experience with our
           service. Please help us by leaving a review!
@@ -155,8 +159,8 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
 
     return (
       <div>
-        <div className="sr-mb-6">
-          <h1 className="sr-font-semibold">
+        <div className="sr-mb-8">
+          <h1 className="sr-font-semibold sr-text-2xl mb-1">
             We're sorry we didn't meet your expectations
           </h1>
           <p>
@@ -257,7 +261,9 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
   if (feedbackSent) {
     return (
       <div className="sr-text-center">
-        <h1 className="sr-font-semibold">Thank you for your feedback</h1>
+        <h1 className="sr-font-semibold sr-text-2xl">
+          Thank you for your feedback
+        </h1>
         <p className="">
           We appreciate your feedback. Your input will help us improve our
           service.
@@ -270,11 +276,13 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
     <>
       {loading && <Loading />}
       {!loading && data && (
-        <div className="sr-h-[32rem] sr-text-xl sr-flex sr-flex-col sr-justify-center sr-text-center">
+        <div className="sr-h-[34rem] sr-text-xl sr-flex sr-flex-col sr-justify-center sr-text-center">
           {!experience ? (
             <div>
-              <div className="sr-mb-6">
-                <h1 className="sr-font-semibold">How did we do?</h1>
+              <div className="sr-mb-8">
+                <h1 className="sr-font-semibold sr-text-2xl mb-1">
+                  How did we do?
+                </h1>
                 <p className="">
                   We value your feedback! Please take a moment to let us know
                   about your experience with our service.

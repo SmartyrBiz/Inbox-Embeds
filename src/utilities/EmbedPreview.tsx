@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ReviewAPIData } from "../utilities/types";
 import ReviewSlider from "../components/ReviewSlider";
 import ReviewWidget from "../components/ReviewWidget";
-import { EyeIcon } from "@heroicons/react/24/solid";
 import ReviewGrid from "../components/ReviewGrid";
 
 export default function EmbedPreview({
@@ -33,7 +32,7 @@ export default function EmbedPreview({
         setData({ ...data, reviews: filteredReviews });
       })
       .catch((e) => {
-        console.log(e);
+        console.error(e);
         setLoading(false);
         setError("Error fetching reviews from server");
       });

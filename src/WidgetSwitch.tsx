@@ -9,7 +9,6 @@ import FeedbackWizard from "./components/FeedbackWizard";
 export default function WidgetSwitch({ embed, data, loading }: any) {
   const embedType = embed.dataset.embed;
   const organisationId = embed.dataset.organisation;
-  const postTo = embed.dataset.post;
 
   switch (embedType) {
     case "slider":
@@ -22,7 +21,13 @@ export default function WidgetSwitch({ embed, data, loading }: any) {
       return <ReviewGrid data={data} loading={loading} />;
 
     case "feedback-wizard":
-      return <FeedbackWizard data={data} postTo={postTo} loading={loading} />;
+      return (
+        <FeedbackWizard
+          data={data}
+          organisationId={organisationId}
+          loading={loading}
+        />
+      );
 
     default:
       return <div>Default</div>;

@@ -2,14 +2,15 @@ import { useState } from "react";
 import Loading from "../utilities/LoadingSpinner";
 
 enum Experience {
-  positive = "positive",
-  negative = "negative",
+  positive = "Excellent",
+  average = "Average",
+  negative = "Poor",
 }
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneRegex = /^\+?[1-9]\d{1,14}$/;
 
-export default function FeedbackWizard({ data, postTo, loading }: any) {
+export default function FeedbackWizard({ data, organisationId, loading }: any) {
   const [experience, setExperience] = useState<Experience | null>(null);
   const [feedbackSent, setFeedbackSent] = useState(false);
 
@@ -23,7 +24,7 @@ export default function FeedbackWizard({ data, postTo, loading }: any) {
       </button>
       <button
         className="sr-button sr-button-outline sr-py-4"
-        onClick={() => setExperience(Experience.negative)}
+        onClick={() => setExperience(Experience.average)}
       >
         <div className="sr-grow">Average</div>
       </button>
@@ -87,6 +88,7 @@ export default function FeedbackWizard({ data, postTo, loading }: any) {
     const [feedback, setFeedback] = useState("");
     const [error, setError] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSpamBot, setIsSpamBot] = useState(false); // Add state for spam bot detection
 
     const onSubmit = (e: any) => {
       e.preventDefault();
@@ -100,16 +102,27 @@ export default function FeedbackWizard({ data, postTo, loading }: any) {
         return;
       }
 
+      if (isSpamBot) {
+        setError(
+          "Your submission has been flagged as spam. If this is a mistake, please try again without autofill."
+        );
+        return
+      }
+
       setIsSubmitting(true);
-      fetch(postTo, {
+      fetch("https://inbox-api.smartyr.biz/api/v1/feedback", {
         method: "POST",
         body: JSON.stringify({
           name,
           email,
           phone,
+          experience,
           feedback,
+          organisationId,
         }),
-        mode: "cors", // Add this line to enable CORS
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
         .then((response) => response.json())
         .then((data) => {
@@ -117,9 +130,13 @@ export default function FeedbackWizard({ data, postTo, loading }: any) {
           setEmail("");
           setPhone("");
           setFeedback("");
+          setFeedbackSent(true);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          setError("An error occurred. Please try again.");
         })
         .finally(() => {
-          setFeedbackSent(true);
           setIsSubmitting(false);
         });
     };
@@ -186,6 +203,20 @@ export default function FeedbackWizard({ data, postTo, loading }: any) {
               name="feedback"
             />
           </div>
+          {/* Honeypot field */}
+          <div
+            className="sr-col-span-full sr-flex sr-flex-col"
+            style={{ display: "none" }}
+          >
+            <label htmlFor="honeypot">Leave this field blank</label>
+            <input
+              className="sr-input sr-py-4 sr-px-2 sr-mt-1"
+              type="text"
+              value={isSpamBot ? "Spam Bot Detected" : ""}
+              onChange={() => setIsSpamBot(true)}
+              name="honeypot"
+            />
+          </div>
           <div className="sr-flex sr-gap-4 sr-justify-end sr-col-span-full">
             <button
               onClick={() => setExperience(null)}
@@ -236,6 +267,7 @@ export default function FeedbackWizard({ data, postTo, loading }: any) {
           ) : (
             <div>
               {experience === Experience.positive && <PositiveReview />}
+              {experience === Experience.average && <NegativeReview />}
               {experience === Experience.negative && <NegativeReview />}
             </div>
           )}

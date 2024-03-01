@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Loading from "../utilities/LoadingSpinner";
+import { CheckCircleIcon, MinusCircleIcon, XCircleIcon } from "@heroicons/react/24/solid";
 
 enum Experience {
   positive = "Excellent",
@@ -20,32 +21,43 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
         className="sr-button sr-button-outline sr-py-4"
         onClick={() => setExperience(Experience.positive)}
       >
-        <div className="sr-grow">Excellent</div>
+        <div className="sr-grow sr-text-lg sr-flex sr-justify-between sr-items-center">
+          <span>Excellent</span>
+          <CheckCircleIcon className="sr-h-6" />
+        </div>
       </button>
       <button
         className="sr-button sr-button-outline sr-py-4"
         onClick={() => setExperience(Experience.average)}
       >
-        <div className="sr-grow">Average</div>
+        <div className="sr-grow sr-text-lg sr-flex sr-justify-between sr-items-center">
+          <span>Average</span>
+          <MinusCircleIcon className="sr-h-6" />
+        </div>
       </button>
       <button
         className="sr-button sr-button-outline sr-py-4"
         onClick={() => setExperience(Experience.negative)}
       >
-        <div className="sr-grow sr-header-large">Poor</div>
+        <div className="sr-grow sr-text-lg sr-flex sr-justify-between sr-items-center">
+          <span>Poor</span>
+          <XCircleIcon className="sr-h-6" />
+        </div>
       </button>
     </div>
   );
 
   const PositiveReview = () => (
     <div>
-      <h1 className="sr-header-large">Thank you!</h1>
-      <p>
-        We're thrilled to hear that you had an excellent experience with our
-        service. Please help us by leaving a review!
-      </p>
+      <div className="sr-mb-6">
+        <h1 className="sr-font-semibold">Thank you!</h1>
+        <p>
+          We're thrilled to hear that you had an excellent experience with our
+          service. Please help us by leaving a review!
+        </p>
+      </div>
 
-      <div className="sr-flex sr-gap-2">
+      <div className="sr-flex sr-justify-center sr-gap-2">
         <a
           href={data.newReviewUrl}
           target="_blank"
@@ -106,7 +118,7 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
         setError(
           "Your submission has been flagged as spam. If this is a mistake, please try again without autofill."
         );
-        return
+        return;
       }
 
       setIsSubmitting(true);
@@ -143,11 +155,15 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
 
     return (
       <div>
-        <h1 className="sr-header-large">Help us improve</h1>
-        <p>
-          We're sorry to hear that you had a poor experience with our service.
-          Please let us know how we can improve.
-        </p>
+        <div className="sr-mb-6">
+          <h1 className="sr-font-semibold">
+            We're sorry we didn't meet your expectations
+          </h1>
+          <p>
+            We're sorry to hear that you had a subpar experience with our
+            service. Please let us know how we can improve.
+          </p>
+        </div>
 
         {error && (
           <div className="sr-bg-red-500 sr-mb-2 sr-rounded-lg sr-p-4">
@@ -241,8 +257,8 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
   if (feedbackSent) {
     return (
       <div className="sr-text-center">
-        <h1 className="sr-header-large">Thank you!</h1>
-        <p>
+        <h1 className="sr-font-semibold">Thank you for your feedback</h1>
+        <p className="">
           We appreciate your feedback. Your input will help us improve our
           service.
         </p>
@@ -254,14 +270,16 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
     <>
       {loading && <Loading />}
       {!loading && data && (
-        <div>
+        <div className="sr-h-[32rem] sr-text-xl sr-flex sr-flex-col sr-justify-center sr-text-center">
           {!experience ? (
             <div>
-              <h1 className="sr-header-large">How was your experience?</h1>
-              <p className="">
-                We value your feedback! Please take a moment to let us know
-                about your experience with our service.
-              </p>
+              <div className="sr-mb-6">
+                <h1 className="sr-font-semibold">How did we do?</h1>
+                <p className="">
+                  We value your feedback! Please take a moment to let us know
+                  about your experience with our service.
+                </p>
+              </div>
               <ExperienceSelector />
             </div>
           ) : (

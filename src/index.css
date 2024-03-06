@@ -11,6 +11,15 @@
   .sr-button-outline {
     @apply sr-bg-white sr-border-gray-300 sr-border-solid sr-text-gray-700 hover:sr-bg-gray-50 sr-px-4 sr-py-2 sr-border;
   }
+  .sr-input {
+    @apply sr-text-base sr-px-2 sr-py-0 sr-bg-white sr-font-medium sr-whitespace-nowrap sr-justify-center sr-flex sr-gap-1 sr-items-center sr-rounded-md sr-border sr-border-transparent focus:sr-outline-none focus:sr-ring-1 focus:sr-ring-white focus:sr-ring-offset-1;
+  }
+  .sr-input-outline {
+    @apply sr-bg-white sr-border-gray-300 sr-border-solid sr-text-gray-700 hover:sr-bg-gray-50 sr-px-4 sr-py-2 sr-border;
+  }
+  .sr-label {
+    @apply sr-text-lg sr-font-medium sr-text-gray-800;
+  }
   .sr-paragraph-small {
     @apply sr-text-sm  sr-text-gray-800;
   }

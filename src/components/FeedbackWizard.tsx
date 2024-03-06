@@ -169,7 +169,7 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
     return (
       <div>
         <div className="sr-mb-8">
-          <h1 className="sr-font-semibold sr-text-2xl mb-1">
+          <h1 className="sr-font-semibold sr-text-2xl mb-2">
             We're sorry we didn't meet your expectations
           </h1>
           <p>
@@ -189,10 +189,12 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
           onSubmit={onSubmit}
         >
           <div className="sr-flex sr-flex-col">
-            <label htmlFor="name">Name</label>
+            <label className="sr-label" htmlFor="name">
+              Name
+            </label>
             <input
               required
-              className="sr-input sr-py-4 sr-px-2 sr-mt-1"
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
               type="text"
               value={name || ""}
               onChange={(e) => setName(e.target.value)}
@@ -200,10 +202,12 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
             />
           </div>
           <div className="sr-flex sr-flex-col">
-            <label htmlFor="phone">Email</label>
+            <label className="sr-label" htmlFor="phone">
+              Email
+            </label>
             <input
               required
-              className="sr-input sr-py-4 sr-px-2 sr-mt-1"
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
               type="text"
               value={email || ""}
               onChange={(e) => setEmail(e.target.value)}
@@ -211,10 +215,12 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
             />
           </div>
           <div className="sr-col-span-full sr-flex sr-flex-col">
-            <label htmlFor="phone">Phone</label>
+            <label className="sr-label" htmlFor="phone">
+              Phone
+            </label>
             <input
               required
-              className="sr-input sr-py-4 sr-px-2 sr-mt-1"
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
               type="text"
               value={phone || ""}
               onChange={(e) => setPhone(e.target.value)}
@@ -222,10 +228,12 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
             />
           </div>
           <div className="sr-col-span-full sr-flex sr-flex-col">
-            <label htmlFor="feedback">Feedback</label>
+            <label className="sr-label" htmlFor="feedback">
+              Feedback
+            </label>
             <textarea
               required
-              className="sr-input sr-py-4 sr-px-2 sr-mt-1"
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
               rows={3}
               value={feedback || ""}
               onChange={(e) => setFeedback(e.target.value)}

@@ -27,7 +27,10 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
       >
         <div className="sr-grow sr-text-lg sr-flex sr-justify-between sr-items-center">
           <span>Excellent</span>
-          <CheckCircleIcon className="sr-h-6" />
+          {/* <CheckCircleIcon className="sr-h-6" /> */}
+          <span className="sr-text-2xl [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
+            😀
+          </span>
         </div>
       </button>
       <button
@@ -36,7 +39,10 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
       >
         <div className="sr-grow sr-text-lg sr-flex sr-justify-between sr-items-center">
           <span>Average</span>
-          <MinusCircleIcon className="sr-h-6" />
+          {/* <MinusCircleIcon className="sr-h-6" /> */}
+          <span className="sr-text-2xl [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
+            😐
+          </span>
         </div>
       </button>
       <button
@@ -45,7 +51,10 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
       >
         <div className="sr-grow sr-text-lg sr-flex sr-justify-between sr-items-center">
           <span>Poor</span>
-          <XCircleIcon className="sr-h-6" />
+          {/* <XCircleIcon className="sr-h-6" /> */}
+          <span className="sr-text-2xl [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
+            😞
+          </span>
         </div>
       </button>
     </div>
@@ -238,13 +247,13 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
             />
           </div>
           <div className="sr-flex sr-gap-4 sr-justify-end sr-col-span-full">
-            <button
+            {/* <button
               onClick={() => setExperience(null)}
               type="button"
               className="sr-button sr-button-outline"
             >
               Go back
-            </button>
+            </button> */}
             <button
               type="submit"
               className="sr-button sr-button-outline"

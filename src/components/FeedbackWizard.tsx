@@ -17,6 +17,7 @@ const phoneRegex = /^\+?[1-9]\d{1,14}$/;
 
 export default function FeedbackWizard({ data, organisationId, loading }: any) {
   const [experience, setExperience] = useState<Experience | null>(null);
+  const [sendPositiveFeedback, setSendPositiveFeedback] = useState(false);
   const [feedbackSent, setFeedbackSent] = useState(false);
 
   const ExperienceSelector = () => (
@@ -103,8 +104,205 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
           </svg>
         </a>
       </div>
+      <div className="sr-mt-8">
+        <p className="sr-text-neutral-500 sr-text-sm">
+          Alternatively, you can use this{" "}
+          <span
+            role="link"
+            onClick={() => setSendPositiveFeedback(true)}
+            className="sr-font-semibold sr-underline sr-text-blue-600 sr-cursor-pointer"
+          >
+            form
+          </span>{" "}
+          to leave us a message directly!
+        </p>
+      </div>
     </div>
   );
+
+  const PositiveFeedback = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [feedback, setFeedback] = useState("");
+    const [error, setError] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSpamBot, setIsSpamBot] = useState(false); // Add state for spam bot detection
+
+    const onSubmit = (e: any) => {
+      e.preventDefault();
+      setError("");
+      if (!emailRegex.test(email)) {
+        setError("Please enter a valid email address.");
+        return;
+      }
+      if (!phoneRegex.test(phone)) {
+        setError("Please enter a valid phone number. (e.g. +1234567890)");
+        return;
+      }
+
+      if (isSpamBot) {
+        setError(
+          "Your submission has been flagged as spam. If this is a mistake, please try again without autofill."
+        );
+        return;
+      }
+
+      setIsSubmitting(true);
+      fetch("https://inbox-api.smartyr.biz/api/v1/feedback", {
+        method: "POST",
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          experience,
+          feedback,
+          organisationId,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setName("");
+          setEmail("");
+          setPhone("");
+          setFeedback("");
+          setFeedbackSent(true);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          setError("An error occurred. Please try again.");
+        })
+        .finally(() => {
+          setIsSubmitting(false);
+        });
+    };
+
+    return (
+      <div>
+        <div className="sr-mb-8">
+          <h1 className="sr-font-semibold sr-text-2xl mb-2">
+            We'd love to hear from you!
+          </h1>
+          <p className="">
+            We're really glad to hear that you had a positive experience with
+            our service. Please feel free to let us know if there's anything we
+            can do to make it even better!
+          </p>
+        </div>
+
+        {error && (
+          <div className="sr-bg-red-500 sr-mb-2 sr-rounded-lg sr-p-4">
+            <p className="sr-text-sm  sr-text-white sr-m-0">{error}</p>
+          </div>
+        )}
+
+        <form
+          className="sr-grid sr-grid-cols-1 sr-gap-y-4 sm:sr-grid-cols-2 sm:sr-gap-x-4 sr-text-left"
+          onSubmit={onSubmit}
+        >
+          <div className="sr-flex sr-flex-col">
+            <label className="sr-label" htmlFor="name">
+              Name
+            </label>
+            <input
+              required
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
+              type="text"
+              value={name || ""}
+              onChange={(e) => setName(e.target.value)}
+              name="name"
+            />
+          </div>
+          <div className="sr-flex sr-flex-col">
+            <label className="sr-label" htmlFor="phone">
+              Email
+            </label>
+            <input
+              required
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
+              type="text"
+              value={email || ""}
+              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+            />
+          </div>
+          <div className="sr-col-span-full sr-flex sr-flex-col">
+            <label className="sr-label" htmlFor="phone">
+              Phone
+            </label>
+            <input
+              required
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
+              type="text"
+              value={phone || ""}
+              onChange={(e) => setPhone(e.target.value)}
+              name="phone"
+            />
+          </div>
+          <div className="sr-col-span-full sr-flex sr-flex-col">
+            <label className="sr-label" htmlFor="feedback">
+              Feedback
+            </label>
+            <textarea
+              required
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
+              rows={3}
+              value={feedback || ""}
+              onChange={(e) => setFeedback(e.target.value)}
+              name="feedback"
+            />
+          </div>
+          {/* Honeypot field */}
+          <div
+            className="sr-col-span-full sr-flex sr-flex-col"
+            style={{ display: "none" }}
+          >
+            <label htmlFor="honeypot">Leave this field blank</label>
+            <input
+              className="sr-input sr-py-4 sr-px-2 sr-mt-1"
+              type="text"
+              value={isSpamBot ? "Spam Bot Detected" : ""}
+              onChange={() => setIsSpamBot(true)}
+              name="honeypot"
+            />
+          </div>
+          <div className="sr-flex sr-gap-4 sr-justify-end sr-col-span-full">
+            {/* <button
+              onClick={() => setExperience(null)}
+              type="button"
+              className="sr-button sr-button-outline"
+            >
+              Go back
+            </button> */}
+            <button
+              type="submit"
+              className="sr-button sr-button-outline"
+              disabled={isSubmitting}
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    );
+  };
+
+  if (feedbackSent) {
+    return (
+      <div className="sr-text-center">
+        <h1 className="sr-font-semibold sr-text-2xl">
+          Thank you for your feedback
+        </h1>
+        <p className="">
+          We really appreciate your feedback. Thank you for taking the time to
+          let us know how we did!
+        </p>
+      </div>
+    );
+  }
 
   const NegativeReview = () => {
     const [name, setName] = useState("");
@@ -293,7 +491,7 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
     <>
       {loading && <Loading />}
       {!loading && data && (
-        <div className="sr-h-[34rem] sr-text-xl sr-flex sr-flex-col sr-justify-center sr-text-center">
+        <div className="sr-h-[36rem] sr-text-xl sr-flex sr-flex-col sr-justify-center sr-text-center">
           {!experience ? (
             <div>
               <div className="sr-mb-8">
@@ -309,7 +507,12 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
             </div>
           ) : (
             <div>
-              {experience === Experience.positive && <PositiveReview />}
+              {experience === Experience.positive && !sendPositiveFeedback && (
+                <PositiveReview />
+              )}
+              {experience === Experience.positive && sendPositiveFeedback && (
+                <PositiveFeedback />
+              )}
               {experience === Experience.average && <NegativeReview />}
               {experience === Experience.negative && <NegativeReview />}
             </div>

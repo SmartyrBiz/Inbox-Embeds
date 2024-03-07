@@ -7,31 +7,38 @@ export default function renderSchema(data: ReviewAPIData) {
   reviewsSchema.type = "application/ld+json";
   let reviewsSchemaArray = data.reviews.map((review: any) => {
     return {
+      "@context": "https://schema.org/",
       "@type": "Review",
-      datePublished: dateFormatter(review.createdAt),
-      reviewBody: review.comment,
+      itemReviewed: {
+        "@type": "LocalBusiness",
+        name: data.organisationName,
+      },
       reviewRating: {
         "@type": "Rating",
-        bestRating: "5",
         ratingValue: RATINGS[review.rating as keyof typeof RATINGS],
+        bestRating: "5",
         worstRating: "1",
       },
+      reviewBody: review.comment,
       author: {
         "@type": "Person",
         name: review.reviewer.name,
       },
+      datePublished: dateFormatter(review.createdAt),
     };
   });
 
   reviewsSchema.text = JSON.stringify({
     "@context": "https://schema.org",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: data.averageRating,
-      reviewCount: data.totalReviewCount,
+    "@type": "AggregateRating",
+    itemReviewed: {
+      "@type": "LocalBusiness",
+      name: data.organisationName,
     },
-    name: "Business Name",
-    "@type": "Product",
+    ratingValue: data.averageRating,
+    reviewCount: data.totalReviewCount,
+    bestRating: "5",
+    worstRating: "1",
     review: reviewsSchemaArray,
   });
   document.querySelector("body")!.appendChild(reviewsSchema);

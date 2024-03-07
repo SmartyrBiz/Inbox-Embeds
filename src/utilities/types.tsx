@@ -177,6 +177,7 @@ export type ReviewAPIData = {
   newReviewUrl: string;
   totalReviewCount: number;
   averageRating: number;
+  organisationName: string;
   reviews: [
     {
       createdAt: string;

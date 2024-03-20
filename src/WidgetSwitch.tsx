@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
 import ReviewSlider from "./components/ReviewSlider";
 import ReviewWidget from "./components/ReviewWidget";
-import { ReviewAPIData } from "./utilities/types";
-import renderSchema from "./utilities/renderSchema";
 import ReviewGrid from "./components/ReviewGrid";
+import FeedbackWizard from "./components/FeedbackWizard";
 
 export default function WidgetSwitch({ embed, data, loading }: any) {
   const embedType = embed.dataset.embed;
@@ -18,6 +16,15 @@ export default function WidgetSwitch({ embed, data, loading }: any) {
 
     case "grid":
       return <ReviewGrid data={data} loading={loading} />;
+
+    case "feedback-wizard":
+      return (
+        <FeedbackWizard
+          data={data}
+          organisationId={organisationId}
+          loading={loading}
+        />
+      );
 
     default:
       return <div>Default</div>;

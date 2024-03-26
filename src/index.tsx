@@ -8,7 +8,7 @@ import { dateFormatter } from "./utilities/dateFormatter";
 import RATINGS from "./utilities/RATINGS";
 import renderSchema from "./utilities/renderSchema";
 
-window.addEventListener("load", function () {
+window.addEventListener("popstate", function () {
   let loading = true;
   const EmbedNodes: NodeListOf<HTMLElement> =
     document.querySelectorAll("[data-embed]");

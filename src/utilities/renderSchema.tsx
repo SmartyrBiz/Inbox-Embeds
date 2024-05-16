@@ -41,6 +41,5 @@ export default function renderSchema(data: ReviewAPIData) {
 
   reviewsSchema.text = JSON.stringify(localBusinessSchema);
 
-  console.log(reviewsSchema.text);
   document.querySelector("body")!.appendChild(reviewsSchema);
 }

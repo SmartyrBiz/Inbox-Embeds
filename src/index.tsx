@@ -18,6 +18,7 @@ window.addEventListener("load", function () {
   )
     .then((response) => response.json())
     .then((data) => {
+      console.log("Fetched data:", data);
       loading = false;
       const filteredReviews = data.reviews.filter((review: any) => {
         return (
@@ -25,6 +26,12 @@ window.addEventListener("load", function () {
           review.comment
         );
       });
+
+      filteredReviews.sort(
+        (a: any, b: any) =>
+          new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+      );
+
       renderReactApps({ ...data, reviews: filteredReviews }, loading);
       renderSchema(data);
     });

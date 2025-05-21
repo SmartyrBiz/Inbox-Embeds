@@ -148,14 +148,7 @@ export default function ReviewGrid({ data, loading }: any) {
             </button>
           </div>
         </div>
-      ) : (
-        !loading &&
-        data && (
-          <div className="sr-text-center sr-py-8">
-            <p>No reviews available yet.</p>
-          </div>
-        )
-      )}
+      ) : null}
     </>
   );
 }

@@ -45,14 +45,7 @@ export default function ReviewWidget({ data, loading }: any) {
             <p className="sr-my-0 sr-mt-0">{data.totalReviewCount} Reviews</p>
           </div>
         </a>
-      ) : (
-        !loading &&
-        data && (
-          <div className="sr-text-center sr-py-4">
-            <p>No reviews available yet.</p>
-          </div>
-        )
-      )}
+      ) : null}
     </>
   );
 }

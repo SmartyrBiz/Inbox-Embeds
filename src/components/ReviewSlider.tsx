@@ -170,14 +170,7 @@ export default function ReviewSlider({ data, loading }: any) {
             </button>
           </div>
         </>
-      ) : (
-        !loading &&
-        data && (
-          <div className="sr-text-center sr-py-8">
-            <p>No reviews available yet.</p>
-          </div>
-        )
-      )}
+      ) : null}
     </>
   );
 }

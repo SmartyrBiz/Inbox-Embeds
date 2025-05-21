@@ -4,7 +4,7 @@ export default function ReviewWidget({ data, loading }: any) {
   return (
     <>
       {loading && <Loading />}
-      {!loading && data && data.reviews.length && (
+      {!loading && data && data.reviews && data.reviews.length > 0 ? (
         <a
           target="_blank"
           href={data.locationUrl}
@@ -45,6 +45,13 @@ export default function ReviewWidget({ data, loading }: any) {
             <p className="sr-my-0 sr-mt-0">{data.totalReviewCount} Reviews</p>
           </div>
         </a>
+      ) : (
+        !loading &&
+        data && (
+          <div className="sr-text-center sr-py-4">
+            <p>No reviews available yet.</p>
+          </div>
+        )
       )}
     </>
   );

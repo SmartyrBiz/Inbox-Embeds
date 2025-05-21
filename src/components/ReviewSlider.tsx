@@ -22,7 +22,7 @@ export default function ReviewSlider({ data, loading }: any) {
         </div>
       )}
 
-      {!loading && data && data.reviews.length && (
+      {!loading && data && data.reviews && data.reviews.length > 0 ? (
         <>
           <div className="sr-flex sr-flex-col sr-place-items-center sr-justify-center sr-text-center lg:sr-justify-between lg:sr-text-left lg:sr-place-items-end lg:sr-flex-row sr-gap-4 sr-mb-8">
             <div>
@@ -98,6 +98,7 @@ export default function ReviewSlider({ data, loading }: any) {
                           <img
                             src={review.reviewer.avatar}
                             alt={review.reviewer.name}
+                            loading="lazy"
                             className="sr-h-10 sr-w-10 sr-rounded-full sr-bg-gray-500"
                           />
                           <div>
@@ -169,6 +170,13 @@ export default function ReviewSlider({ data, loading }: any) {
             </button>
           </div>
         </>
+      ) : (
+        !loading &&
+        data && (
+          <div className="sr-text-center sr-py-8">
+            <p>No reviews available yet.</p>
+          </div>
+        )
       )}
     </>
   );

@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import ReviewSlider from "./components/ReviewSlider";
 import App from "./App";
 import { ReviewAPIData } from "./utilities/types";
-import { dateFormatter } from "./utilities/dateFormatter";
-import RATINGS from "./utilities/RATINGS";
 import renderSchema from "./utilities/renderSchema";
+
+const ratingMap = {
+  1: "ONE",
+  2: "TWO",
+  3: "THREE",
+  4: "FOUR",
+  5: "FIVE",
+};
 
 // Transform new API data to match ReviewAPIData format
 const transformNewApiData = (data: any): ReviewAPIData => {
@@ -15,7 +20,7 @@ const transformNewApiData = (data: any): ReviewAPIData => {
       createdAt: review.postedAt,
       updatedAt: review.updatedAt,
       name: review.name,
-      rating: review.rating >= 4 ? "FIVE" : "FOUR", // Convert numeric rating to string format
+      rating: ratingMap[review.rating as keyof typeof ratingMap] || "FIVE",
       comment: review.comment || "",
       provider: "GOOGLE",
       reviewer: {
@@ -46,11 +51,14 @@ window.addEventListener("load", function () {
       return data;
     } else if (element.dataset.instance) {
       // New API
-      const response = await fetch(`http://localhost:8080/v1/google/reviews`, {
-        headers: {
-          instance: element.dataset.instance,
-        },
-      });
+      const response = await fetch(
+        `https://staging-api.smartyrdxp.com/v1/google/reviews`,
+        {
+          headers: {
+            instance: element.dataset.instance,
+          },
+        }
+      );
       const data = await response.json();
       return transformNewApiData(data);
     }

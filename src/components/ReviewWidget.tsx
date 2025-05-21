@@ -4,7 +4,11 @@ export default function ReviewWidget({ data, loading }: any) {
   return (
     <>
       {loading && <Loading />}
-      {!loading && data && data.reviews && data.reviews.length > 0 ? (
+      {!loading &&
+      data &&
+      data.reviews &&
+      data.reviews.length > 0 &&
+      data.totalReviewCount > 0 ? (
         <a
           target="_blank"
           href={data.locationUrl}

@@ -27,7 +27,11 @@ export default function ReviewGrid({ data, loading }: any) {
   return (
     <>
       {loading && <Loading />}
-      {!loading && data && data.reviews && data.reviews.length > 0 ? (
+      {!loading &&
+      data &&
+      data.reviews &&
+      data.reviews.length > 0 &&
+      data.totalReviewCount > 0 ? (
         <div>
           <div className="sr-flex sr-flex-col lg:sr-flex-row sr-gap-2 sr-justify-between  sr-place-items-start lg:sr-place-items-center sr-mb-6">
             <div className="">

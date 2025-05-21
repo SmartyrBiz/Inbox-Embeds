@@ -22,7 +22,11 @@ export default function ReviewSlider({ data, loading }: any) {
         </div>
       )}
 
-      {!loading && data && data.reviews && data.reviews.length > 0 ? (
+      {!loading &&
+      data &&
+      data.reviews &&
+      data.reviews.length > 0 &&
+      data.totalReviewCount > 0 ? (
         <>
           <div className="sr-flex sr-flex-col sr-place-items-center sr-justify-center sr-text-center lg:sr-justify-between lg:sr-text-left lg:sr-place-items-end lg:sr-flex-row sr-gap-4 sr-mb-8">
             <div>

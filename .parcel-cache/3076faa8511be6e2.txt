@@ -66,7 +66,7 @@
 114C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\core-js-pure\stable\array\fill.js133602285405346393 0
 139C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\css-minimizer-webpack-plugin\node_modules\ajv-keywords\src133602285171226419 1
 135C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\react-dev-utils\node_modules\loader-utils\package.json133602284926128413 0
-72C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\dist133922682988302069 1
+72C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\dist133932995752752991 1
 119C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\terser-webpack-plugin\types\utils.d.ts133602284935913624 0
 110C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\jest-watcher\build\index.d.ts133602284960135358 0
 107C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\date-fns\fp\clamp\index.js133602285480312280 0
@@ -303,7 +303,7 @@
 158C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\webpack-dev-middleware\node_modules\ajv\dist\compile\validate\defaults.js.map133602285219204009 0
 111C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\xml-name-validator\LICENSE.txt133602284673867334 0
 121C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\workbox-build\build\lib\rebase-path.d.ts133602285155911460 0
-81C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\src\index.tsx133922624239033379 0
+81C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\src\index.tsx133932995495234102 0
 99C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\fs-extra\README.md133602285042073206 0
 110C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\object.assign\dist\browser.js133602284997870111 0
 149C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\workbox-build\node_modules\ajv\dist\compile\validate\boolSchema.d.ts133602285287363833 0
@@ -24308,7 +24308,7 @@
 99C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\date-fns\locale\ug133602285556494614 1
 108C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\date-fns\esm\previousMonday133602285544359400 1
 142C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\eslint-plugin-react\node_modules\resolve\test\node_path\x\aaa133602285058792312 1
-82C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\dist\index.css133922679475003526 0
+82C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\dist\index.css133932995736521369 0
 101C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\p-retry\package.json133602284713864600 0
 139C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\@babel\helper-create-class-features-plugin\lib\misc.js.map133602284954343562 0
 98C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\p-retry\readme.md133602284750606258 0
@@ -51440,7 +51440,7 @@
 148C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\@typescript-eslint\eslint-plugin\docs\rules\prefer-function-type.md133602285363394935 0
 143C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\@typescript-eslint\eslint-plugin\docs\rules\prefer-includes.md133602285363668520 0
 152C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\@typescript-eslint\eslint-plugin\docs\rules\prefer-namespace-keyword.md133602285363859315 0
-81C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\dist\index.js133922682986935047 0
+81C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\dist\index.js133932995751407012 0
 146C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\@typescript-eslint\eslint-plugin\docs\rules\prefer-regexp-exec.md133602285364858352 0
 158C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\@typescript-eslint\eslint-plugin\docs\rules\prefer-string-starts-ends-with.md133602285365362894 0
 150C:\Users\Lachlan Jeffress\Documents\code\smartyr\inbox\Inbox-Embeds\node_modules\@typescript-eslint\eslint-plugin\docs\rules\promise-function-async.md133602285365819976 0

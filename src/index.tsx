@@ -52,7 +52,7 @@ window.addEventListener("load", function () {
     } else if (element.dataset.instance) {
       // New API
       const response = await fetch(
-        `https://staging-api.smartyrdxp.com/v1/google/reviews`,
+        `https://api.smartyrdxp.com/v1/google/reviews`,
         {
           headers: {
             instance: element.dataset.instance,

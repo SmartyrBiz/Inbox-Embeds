@@ -12,6 +12,14 @@ import Loading from "../utilities/LoadingSpinner";
 import "swiper/swiper.min.css";
 import "swiper/swiper-bundle.min.css";
 
+const processGoogleAvatar = (url: string) => {
+  if (!url || !url.includes("googleusercontent.com")) return url;
+
+  // Remove authentication parameters and use public format
+  const baseUrl = url.split("=")[0];
+  return `${baseUrl}=s40-c`; // s40 = 40px size, c = crop to square
+};
+
 export default function ReviewSlider({ data, loading }: any) {
   const swiperRef = useRef<SwiperType>();
   return (
@@ -94,16 +102,21 @@ export default function ReviewSlider({ data, loading }: any) {
               }}
             >
               {data.reviews.slice(0, 15).map((review: any) => {
+                const processedAvatarUrl = processGoogleAvatar(
+                  review.reviewer.avatar
+                );
                 return (
                   <SwiperSlide key={review.name}>
                     <div className="sr-p-6 sr-bg-white sr-border sr-rounded-md sr-h-full sr-flex sr-flex-col sr-justify-between">
                       <div>
                         <div className="sr-flex sr-place-items-center sr-gap-2 sr-mb-4">
                           <img
-                            src={review.reviewer.avatar}
+                            src={processedAvatarUrl}
                             alt={review.reviewer.name}
                             loading="lazy"
                             className="sr-h-10 sr-w-10 sr-rounded-full sr-bg-gray-500"
+                            referrerPolicy="no-referrer"
+                            crossOrigin="anonymous"
                           />
                           <div>
                             <p className="sr-font-medium sr-mb-0 sr-mt-0">

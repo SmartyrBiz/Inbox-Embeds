@@ -75,6 +75,13 @@ window.addEventListener("load", function () {
           review.comment
         );
       });
+
+      // Sort reviews by updatedAt date (newest first)
+      filteredReviews.sort(
+        (a: any, b: any) =>
+          new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+      );
+
       renderReactApps({ ...data, reviews: filteredReviews }, loading);
       renderSchema(data);
     })

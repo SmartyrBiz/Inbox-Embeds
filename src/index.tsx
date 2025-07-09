@@ -28,7 +28,7 @@ const transformNewApiData = (data: any): ReviewAPIData => {
         avatar: review.profileUrl || "",
       },
     })),
-    locationUrl: data.locationUrl || "",
+    locationUrl: data.locationUrl || data.reviewUri || "",
     newReviewUrl: data.reviewUri || "",
     totalReviewCount: data.total || 0,
     averageRating: data.averageRating || 0,

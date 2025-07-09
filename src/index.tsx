@@ -28,7 +28,7 @@ const transformNewApiData = (data: any): ReviewAPIData => {
         avatar: review.profileUrl || "",
       },
     })),
-    locationUrl: data.locationUrl || "",
+    locationUrl: data.locationUrl || data.reviewUri || "",
     newReviewUrl: data.reviewUri || "",
     totalReviewCount: data.total || 0,
     averageRating: data.averageRating || 0,
@@ -75,6 +75,13 @@ window.addEventListener("load", function () {
           review.comment
         );
       });
+
+      // Sort reviews by updatedAt date (newest first)
+      filteredReviews.sort(
+        (a: any, b: any) =>
+          new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+      );
+
       renderReactApps({ ...data, reviews: filteredReviews }, loading);
       renderSchema(data);
     })

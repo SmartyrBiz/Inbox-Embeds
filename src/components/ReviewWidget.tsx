@@ -12,7 +12,10 @@ export default function ReviewWidget({ data, loading }: any) {
         <a
           target="_blank"
           href={data.locationUrl}
-          className="sr-text-gray-800 sr-no-underline sr-shadow-lg sr-place-items-center sr-rounded-md sr-pl-3 hover:sr-bg-gray-50 sr-p-4 sr-bg-white sr-flex sr-gap-2 "
+          className="sr-flex sr-items-center sr-gap-3 sr-bg-white sr-rounded-md
+                     sr-shadow hover:sr-shadow-xl sr-transition sr-duration-300
+                     hover:sr--translate-y-1 sr-no-underline sr-text-gray-800
+                     sr-p-4"
         >
           <svg
             width="36"
@@ -38,15 +41,17 @@ export default function ReviewWidget({ data, loading }: any) {
             />
           </svg>
           <div>
-            <div className="sr-flex sr-place-items-center">
+            <div className="sr-flex sr-items-center sr-gap-1">
               <Rating
-                readonly={true}
+                readonly
                 initialValue={data.averageRating}
-                allowFraction={true}
-                size={20}
+                allowFraction
+                size={18}
               />
             </div>
-            <p className="sr-my-0 sr-mt-0">{data.totalReviewCount} Reviews</p>
+            <p className="sr-text-sm sr-text-gray-600 sr-my-0">
+              {data.totalReviewCount} Reviews
+            </p>
           </div>
         </a>
       ) : null}

@@ -5,6 +5,14 @@ import Loading from "../utilities/LoadingSpinner";
 import RATINGS from "../utilities/RATINGS";
 import { dateFormatter } from "../utilities/dateFormatter";
 
+const processGoogleAvatar = (url: string) => {
+  if (!url || !url.includes("googleusercontent.com")) return url;
+
+  // Remove authentication parameters and use public format
+  const baseUrl = url.split("=")[0];
+  return `${baseUrl}=s40-c`; // s40 = 40px size, c = crop to square
+};
+
 export default function ReviewGrid({ data, loading }: any) {
   const [showedCount, setShowedCount] = useState(6);
   const [readMoreReviews, setReadMoreReviews] = useState<Array<string>>([]);
@@ -62,6 +70,9 @@ export default function ReviewGrid({ data, loading }: any) {
             {data.reviews
               .slice(0, showedCount)
               .map((review: any, index: number) => {
+                const processedAvatarUrl = processGoogleAvatar(
+                  review.reviewer.avatar
+                );
                 return (
                   <div
                     className="sr-border sr-bg-white sr-rounded-md sr-p-4 sr-flex sr-flex-col sr-place-items-start sr-space-y-3"
@@ -70,10 +81,12 @@ export default function ReviewGrid({ data, loading }: any) {
                     <div className="sr-flex sr-w-full sr-justify-between sr-gap-2 sr-place-items-center">
                       <div className="sr-flex sr-place-items-center sr-gap-2">
                         <img
-                          src={review.reviewer.avatar}
+                          src={processedAvatarUrl}
                           alt={review.reviewer.name}
                           loading="lazy"
                           className="sr-h-10 sr-w-10 sr-rounded-full sr-bg-gray-500"
+                          referrerPolicy="no-referrer"
+                          crossOrigin="anonymous"
                         />
                         <div>
                           <p className="sr-font-medium sr-my-0">

@@ -33,8 +33,8 @@ export default function renderSchema(data: ReviewAPIData) {
       "@type": "AggregateRating",
       bestRating: "5",
       worstRating: "1",
-      // ratingValue: data.averageRating,
-      // ratingCount: data.totalReviewCount,
+      ratingValue: data.averageRating,
+      ratingCount: data.totalReviewCount,
     },
     review: reviewsSchemaArray,
   };

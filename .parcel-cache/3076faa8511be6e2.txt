@@ -1,4 +1,4 @@
-60332
+60333
 141C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\terser-webpack-plugin\node_modules\ajv\lib\runtime\validation_error.ts133964275276636342 0
 112C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\web-vitals\dist\modules\lib\onHidden.d.ts133964274708102119 0
 110C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\pkg-dir\node_modules\find-up\index.d.ts133964274628548105 0
@@ -135,7 +135,7 @@
 115C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\date-fns\esm\fp\differenceInHoursWithOptions133964274937492089 1
 103C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\jsdom\lib\jsdom\living\traversal133964274753262445 1
 101C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\fork-ts-checker-webpack-plugin133964274721490914 1
-88C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\src\utilities\renderSchema.tsx133972698142168452 0
+88C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\src\utilities\renderSchema.tsx133977021806541817 0
 96C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\core-js\full\parse-int.js133964274859231864 0
 95C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\swiper\vue\swiper-vue.js133964274731048231 0
 99C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\workbox-range-requests\utils133964274692475882 1
@@ -155,7 +155,7 @@
 133C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\@parcel\optimizer-htmlnano\node_modules\commander\package.json133964274656481174 0
 101C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\nanoid\non-secure\package.json133964275264044983 0
 97C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\require-directory\index.js133964274637313335 0
-62C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\dist133972698546703696 1
+62C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\dist133977036622857995 1
 104C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\workbox-strategies\CacheFirst.mjs133964274689990033 0
 130C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\workbox-build\node_modules\ajv\lib\refs\json-schema-2019-09133964274745622203 1
 131C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\@eslint\eslintrc\node_modules\js-yaml\lib\schema\failsafe.js133964274672916655 0
@@ -196,7 +196,7 @@
 91C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\clean-css\lib\writer133964274718214487 1
 93C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\core-js\es\typed-array133964274871973622 1
 115C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\core-js\features\reflect\get-own-metadata.js133964274842656198 0
-64C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\public133965083017826349 1
+64C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\public133977035641744531 1
 67C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\README.md133970100840109561 0
 89C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\node-int64\test.js133964274661107795 0
 98C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\swiper\shared\get-device.js133964274716564021 0
@@ -265,7 +265,7 @@
 102C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\core-js\internals\a-callable.js133964274664434619 0
 92C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\webpack\lib\Parser.js133964275277062869 0
 154C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\@surma\rollup-plugin-off-main-thread\tests\fixtures\simple-bundle\build\runner.html133964274695543398 0
-71C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\src\utilities133844912424724636 1
+71C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\src\utilities133977035730869129 1
 160C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\babel-loader\88b8f340e55daf91fba71f1749f529ac1c17c6356fc59e48a3f672485247466e.json133964275605162638 0
 141C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\postcss-svgo\node_modules\css-tree\lib\syntax\pseudo\nth-last-child.js133964274716181412 0
 126C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\@parcel\transformer-posthtml\lib\PostHTMLTransformer.js133964274640869586 0
@@ -275,7 +275,7 @@
 108C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\webpack-sources\lib\SizeOnlySource.js133964274680571330 0
 103C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\date-fns\fp\previousDay\index.js133964274880720555 0
 131C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\eslint-webpack-plugin\node_modules\ajv\dist\compile\names.js133964274711926553 0
-72C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\src\components133970113932178529 1
+72C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\src\components133977035791084217 1
 118C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\date-fns\locale\be\_lib\formatDistance\index.js133964274884021415 0
 82C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\htmlparser2133964274681325481 1
 120C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\webpack\lib\serialization\SingleItemMiddleware.js133964275278041665 0
@@ -10861,6 +10861,7 @@
 151C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\@pmmmwh\react-refresh-webpack-plugin\node_modules\json-schema-traverse\README.md133964275260814638 0
 146C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\workbox-build\node_modules\ajv\dist\refs\json-schema-2020-12\meta\core.json133964274721444340 0
 114C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\electron-to-chromium\chromium-versions.json133964275262511796 0
+160C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\babel-loader\fcf3dc59de3f410e626f4d9a9ffb7dcdf0d12d0a1f59ad356bf6c5ecfe8122a2.json133977032431252107 0
 137C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\terser-webpack-plugin\node_modules\ajv\dist\compile\jtd\types.d.ts133964275276285311 0
 93C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\lmdb\dependencies\lmdb133964274634274168 1
 154C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\fork-ts-checker-webpack-plugin\lib\eslint-reporter\EsLintReporterConfiguration.d.ts133964274723070920 0
@@ -26899,7 +26900,7 @@
 90C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\nwsapi\package.json133964274663226222 0
 87C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\nwsapi\README.md133964274670247229 0
 87C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\lodash\sample.js133964274766114059 0
-98C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\tsconfig.tsbuildinfo133972698101710297 0
+98C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\tsconfig.tsbuildinfo133977035793645039 0
 81C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\nwsapi\src133964274641363508 1
 89C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\nwsapi\src\modules133964274634240817 1
 108C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\date-fns\esm\fp\nextMonday\index.d.ts133964274939743851 0
@@ -30399,7 +30400,7 @@
 103C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\core-js\full\json\is-raw-json.js133964274853148418 0
 123C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\jest-watch-typeahead\node_modules\slash\package.json133964274633659604 0
 120C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\jest-watch-typeahead\node_modules\slash\readme.md133964274638313600 0
-104C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\6.pack133970192381993105 0
+104C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\6.pack133977032465295056 0
 108C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\@parcel\core\test\Environment.test.js133964274711682727 0
 110C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\acorn-node\node_modules\acorn\README.md133964274689518241 0
 117C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\jest-watch-typeahead\node_modules\react-is\cjs133964274659454348 1
@@ -42652,7 +42653,7 @@
 113C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\date-fns\esm\locale\bg\_lib\formatDistance133964274865721648 1
 109C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\date-fns\esm\locale\bg\_lib\formatLong133964274865721648 1
 107C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\date-fns\esm\locale\bg\_lib\localize133964274865721648 1
-71C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\dist\index.js133972698546426263 0
+71C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\dist\index.js133977036622687837 0
 96C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\@jridgewell\trace-mapping133964275266597708 1
 104C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\date-fns\esm\locale\bg\_lib\match133964274865891103 1
 94C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\cssstyle\lib\parsers.js133964274710531530 0
@@ -45160,7 +45161,7 @@
 155C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\css-minimizer-webpack-plugin\node_modules\ajv\dist\vocabularies\dynamic\index.js.map133964274731466460 0
 165C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\css-minimizer-webpack-plugin\node_modules\ajv\dist\vocabularies\dynamic\recursiveAnchor.js.map133964274736711352 0
 160C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\css-minimizer-webpack-plugin\node_modules\ajv\dist\vocabularies\dynamic\recursiveRef.d.ts133964274749935913 0
-104C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\0.pack133972696766132672 0
+104C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\0.pack133977033842289673 0
 158C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\css-minimizer-webpack-plugin\node_modules\ajv\dist\vocabularies\dynamic\recursiveRef.js133964274715767815 0
 119C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\core-js-pure\features\number\min-safe-integer.js133964274857649146 0
 159C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\css-minimizer-webpack-plugin\node_modules\ajv\dist\vocabularies\discriminator\index.d.ts133964274745229553 0
@@ -50719,7 +50720,7 @@
 114C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\compression\node_modules\debug\CHANGELOG.md133964274675866182 0
 115C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\compression\node_modules\debug\karma.conf.js133964274657478800 0
 109C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\compression\node_modules\debug\LICENSE133964274640429927 0
-97C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development133972696766608975 1
+97C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development133977036395022620 1
 110C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\compression\node_modules\debug\Makefile133964274668593452 0
 109C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\compression\node_modules\debug\node.js133964274661603674 0
 111C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\compression\node_modules\debug\README.md133964274634824884 0
@@ -59872,20 +59873,20 @@
 106C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\@adobe\css-tools\dist\index.cjs.map133964275263170055 0
 102C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\@adobe\css-tools\dist\index.mjs133964275264008232 0
 107C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\@adobe\css-tools\dist\types.d.ts.map133964275263620375 0
-90C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\.eslintcache133972698143382360 0
-90C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\babel-loader133972697741199197 1
-104C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\1.pack133972696766608975 0
+90C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\.eslintcache133977032451395962 0
+90C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\babel-loader133977032431187204 1
+104C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\1.pack133977036393786120 0
 105C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\10.pack133970111897332750 0
-105C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\11.pack133970191775546816 0
-105C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\12.pack133970124827403794 0
+105C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\11.pack133977032465295056 0
+105C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\12.pack133977036395022620 0
 105C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\14.pack133972694294581987 0
 105C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\17.pack133970116064196523 0
 105C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\19.pack133970120944872663 0
 104C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\2.pack133970102576256347 0
-104C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\4.pack133972694294601997 0
+104C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\4.pack133977033842034143 0
 104C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\9.pack133972696766290579 0
-108C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\index.pack133972696766181874 0
-112C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\index.pack.old133972694294622000 0
+108C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\index.pack133977036394592531 0
+112C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\default-development\index.pack.old133977033842289673 0
 160C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\babel-loader\005dcefa95e35a6b868c9d644b1cb6c2f8ac5f49f689c6996dddabf5ebb9eaba.json133964275608976217 0
 160C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\babel-loader\02295d705118e6f411fd967d51dc85aeaa1db96fb93086bd7a23d556d3557f69.json133964275604324540 0
 160C:\Users\Probity-PC1-Rafael\Documents\GitHub\Inbox-Embeds\node_modules\.cache\babel-loader\0240b95ce309615c9da27a6e863c836b00b28e24b8dbd24ba3cc56bdb5d6338c.json133964275611724502 0

@@ -3,13 +3,10 @@ import { dateFormatter } from "../utilities/dateFormatter";
 import { ReviewAPIData } from "../utilities/types";
 
 export default function renderSchema(data: ReviewAPIData) {
-  // Validate essential data exists
-  if (!data || !data.organisationName) {
-    console.warn(
-      "renderSchema: Missing essential data, skipping schema generation"
-    );
-    return;
-  }
+  if (!data) return;
+
+  // Get organization name with fallback
+  const organizationName = data.organisationName?.trim() || "Organization";
 
   let reviewsSchema = document.createElement("script");
   reviewsSchema.type = "application/ld+json";
@@ -17,7 +14,6 @@ export default function renderSchema(data: ReviewAPIData) {
   // Check if we have valid reviews
   const hasValidReviews =
     data.reviews && Array.isArray(data.reviews) && data.reviews.length > 0;
-  const actualReviewCount = hasValidReviews ? data.reviews.length : 0;
 
   let reviewsSchemaArray: any[] = [];
 
@@ -34,7 +30,7 @@ export default function renderSchema(data: ReviewAPIData) {
           "@type": "Review",
           itemReviewed: {
             "@type": "Organization",
-            name: data.organisationName,
+            name: organizationName,
           },
           reviewRating: {
             "@type": "Rating",
@@ -54,11 +50,14 @@ export default function renderSchema(data: ReviewAPIData) {
       });
   }
 
+  // Use the actual count of valid reviews after filtering
+  const actualReviewCount = reviewsSchemaArray.length;
+
   // Build base organization schema
   let localBusinessSchema: any = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: data.organisationName,
+    name: organizationName,
   };
 
   // Only add aggregateRating if we have actual reviews and valid rating data

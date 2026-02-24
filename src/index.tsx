@@ -50,7 +50,7 @@ window.addEventListener("load", function () {
       const data = await response.json();
       return data;
     } else if (element.dataset.instance) {
-      // New API
+      // DXP v1 API
       const response = await fetch(
         `https://api.smartyrdxp.com/v1/google/reviews`,
         {
@@ -61,6 +61,13 @@ window.addEventListener("load", function () {
       );
       const data = await response.json();
       return transformNewApiData(data);
+    } else if (element.dataset.brand) {
+      // DXP v2 API
+      const response = await fetch(
+        `https://beta-dxp.smartyr.app/api/v1/reviews/${element.dataset.brand}`
+      );
+      const data = await response.json();
+      return data;
     }
     throw new Error("No valid data attribute found");
   };

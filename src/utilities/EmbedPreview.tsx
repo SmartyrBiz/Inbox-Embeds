@@ -17,7 +17,7 @@ export default function EmbedPreview({
     setLoading(true);
     fetch(
       `https://inbox-api.smartyr.biz/api/v1/review/${
-        process.env.NODE_ENV === "development"
+        import.meta.env.DEV
           ? "b73206af-bd61-4400-a8ab-3c994f25ab56"
           : googleCredential.publicReviewAPIKey
       }`

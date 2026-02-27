@@ -45,29 +45,22 @@ window.addEventListener("load", function () {
     if (element.dataset.organisation) {
       // Inbox API
       const response = await fetch(
-        `https://inbox-api.smartyr.biz/api/v1/review/${element.dataset.organisation}?per_page=30`,
+        `https://inbox-api.smartyr.biz/api/v1/review/${element.dataset.organisation}?per_page=30`
       );
       const data = await response.json();
       return data;
     } else if (element.dataset.instance) {
-      // DXP v1 API
+      // New API
       const response = await fetch(
         `https://api.smartyrdxp.com/v1/google/reviews`,
         {
           headers: {
             instance: element.dataset.instance,
           },
-        },
+        }
       );
       const data = await response.json();
       return transformNewApiData(data);
-    } else if (element.dataset.brand) {
-      // DXP v2 API
-      const response = await fetch(
-        `http://localhost:3001/api/v1/reviews/${element.dataset.brand}`,
-      );
-      const data = await response.json();
-      return data;
     }
     throw new Error("No valid data attribute found");
   };
@@ -86,7 +79,7 @@ window.addEventListener("load", function () {
       // Sort reviews by updatedAt date (newest first)
       filteredReviews.sort(
         (a: any, b: any) =>
-          new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime(),
+          new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
       );
 
       renderReactApps({ ...data, reviews: filteredReviews }, loading);
@@ -124,7 +117,7 @@ window.addEventListener("load", function () {
       ReactDOM.createRoot(HTMLElement).render(
         <React.StrictMode>
           <App embed={HTMLElement} loading={loading} data={data} />
-        </React.StrictMode>,
+        </React.StrictMode>
       );
     });
   }

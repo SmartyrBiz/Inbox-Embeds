@@ -6,7 +6,7 @@ import FeedbackWizard from "./components/FeedbackWizard";
 export default function WidgetSwitch({ embed, data, loading }: any) {
   const embedType = embed.dataset.embed;
   const organisationId = embed.dataset.organisation;
-  const isDxpAPI = !!embed.dataset.instance || !!embed.dataset.brand;
+  const isDxpAPI = !!embed.dataset.instance;
 
   switch (embedType) {
     case "slider":

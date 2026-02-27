@@ -21,39 +21,39 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
   const [feedbackSent, setFeedbackSent] = useState(false);
 
   const ExperienceSelector = () => (
-    <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-3 gap-4">
+    <div className="sr-grid sr-grid-cols-1 sr-gap-y-4 sm:sr-grid-cols-3 sr-gap-4">
       <button
-        className="smy-button smy-button-outline py-4"
+        className="sr-button sr-button-outline sr-py-4"
         onClick={() => setExperience(Experience.positive)}
       >
-        <div className="grow text-lg flex justify-between items-center">
+        <div className="sr-grow sr-text-lg sr-flex sr-justify-between sr-items-center">
           <span>Excellent</span>
-          {/* <CheckCircleIcon className="h-6" /> */}
-          <span className="text-2xl [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
+          {/* <CheckCircleIcon className="sr-h-6" /> */}
+          <span className="sr-text-2xl [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
             😀
           </span>
         </div>
       </button>
       <button
-        className="smy-button smy-button-outline py-4"
+        className="sr-button sr-button-outline sr-py-4"
         onClick={() => setExperience(Experience.average)}
       >
-        <div className="grow text-lg flex justify-between items-center">
+        <div className="sr-grow sr-text-lg sr-flex sr-justify-between sr-items-center">
           <span>Average</span>
-          {/* <MinusCircleIcon className="h-6" /> */}
-          <span className="text-2xl [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
+          {/* <MinusCircleIcon className="sr-h-6" /> */}
+          <span className="sr-text-2xl [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
             😐
           </span>
         </div>
       </button>
       <button
-        className="smy-button smy-button-outline py-4"
+        className="sr-button sr-button-outline sr-py-4"
         onClick={() => setExperience(Experience.negative)}
       >
-        <div className="grow text-lg flex justify-between items-center">
+        <div className="sr-grow sr-text-lg sr-flex sr-justify-between sr-items-center">
           <span>Poor</span>
-          {/* <XCircleIcon className="h-6" /> */}
-          <span className="text-2xl [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
+          {/* <XCircleIcon className="sr-h-6" /> */}
+          <span className="sr-text-2xl [text-shadow:_1px_1px_4px_rgb(0_0_0_/_60%)]">
             😞
           </span>
         </div>
@@ -63,20 +63,20 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
 
   const PositiveReview = () => (
     <div>
-      <div className="mb-8">
-        <h1 className="font-semibold text-2xl mb-1">Thank you!</h1>
+      <div className="sr-mb-8">
+        <h1 className="sr-font-semibold sr-text-2xl mb-1">Thank you!</h1>
         <p>
           We're thrilled to hear that you had an excellent experience with our
           service. Please help us by leaving a review!
         </p>
       </div>
 
-      <div className="flex justify-center gap-2">
+      <div className="sr-flex sr-justify-center sr-gap-2">
         <a
           href={data.newReviewUrl}
           target="_blank"
           rel="noreferrer"
-          className="smy-button smy-button-outline py-2 text-xl gap-4"
+          className="sr-button sr-button-outline sr-py-2 sr-text-xl sr-gap-4"
         >
           <span>Google</span>
           <svg
@@ -104,13 +104,13 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
           </svg>
         </a>
       </div>
-      <div className="mt-8">
-        <p className="text-neutral-500 text-sm">
+      <div className="sr-mt-8">
+        <p className="sr-text-neutral-500 sr-text-sm">
           Alternatively, you can use this{" "}
           <span
             role="link"
             onClick={() => setSendPositiveFeedback(true)}
-            className="font-semibold underline text-blue-600 cursor-pointer"
+            className="sr-font-semibold sr-underline sr-text-blue-600 sr-cursor-pointer"
           >
             form
           </span>{" "}
@@ -182,8 +182,8 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
 
     return (
       <div>
-        <div className="mb-8">
-          <h1 className="font-semibold text-2xl mb-2">
+        <div className="sr-mb-8">
+          <h1 className="sr-font-semibold sr-text-2xl mb-2">
             We'd love to hear from you!
           </h1>
           <p className="">
@@ -194,61 +194,61 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
         </div>
 
         {error && (
-          <div className="bg-red-500 mb-2 rounded-lg p-4">
-            <p className="text-sm  text-white m-0">{error}</p>
+          <div className="sr-bg-red-500 sr-mb-2 sr-rounded-lg sr-p-4">
+            <p className="sr-text-sm  sr-text-white sr-m-0">{error}</p>
           </div>
         )}
 
         <form
-          className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-4 text-left"
+          className="sr-grid sr-grid-cols-1 sr-gap-y-4 sm:sr-grid-cols-2 sm:sr-gap-x-4 sr-text-left"
           onSubmit={onSubmit}
         >
-          <div className="flex flex-col">
-            <label className="text-lg font-medium text-gray-800" htmlFor="name">
+          <div className="sr-flex sr-flex-col">
+            <label className="sr-label" htmlFor="name">
               Name
             </label>
             <input
               required
-              className="text-base px-2 py-0 bg-white font-medium whitespace-nowrap justify-center flex gap-1 items-center rounded-md border border-transparent focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 smy-input-outline py-4 px-2 mt-1"
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
               type="text"
               value={name || ""}
               onChange={(e) => setName(e.target.value)}
               name="name"
             />
           </div>
-          <div className="flex flex-col">
-            <label className="text-lg font-medium text-gray-800" htmlFor="phone">
+          <div className="sr-flex sr-flex-col">
+            <label className="sr-label" htmlFor="phone">
               Email
             </label>
             <input
               required
-              className="text-base px-2 py-0 bg-white font-medium whitespace-nowrap justify-center flex gap-1 items-center rounded-md border border-transparent focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 smy-input-outline py-4 px-2 mt-1"
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
               type="text"
               value={email || ""}
               onChange={(e) => setEmail(e.target.value)}
               name="email"
             />
           </div>
-          <div className="col-span-full flex flex-col">
-            <label className="text-lg font-medium text-gray-800" htmlFor="phone">
+          <div className="sr-col-span-full sr-flex sr-flex-col">
+            <label className="sr-label" htmlFor="phone">
               Phone
             </label>
             <input
               required
-              className="text-base px-2 py-0 bg-white font-medium whitespace-nowrap justify-center flex gap-1 items-center rounded-md border border-transparent focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 smy-input-outline py-4 px-2 mt-1"
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
               type="text"
               value={phone || ""}
               onChange={(e) => setPhone(e.target.value)}
               name="phone"
             />
           </div>
-          <div className="col-span-full flex flex-col">
-            <label className="text-lg font-medium text-gray-800" htmlFor="feedback">
+          <div className="sr-col-span-full sr-flex sr-flex-col">
+            <label className="sr-label" htmlFor="feedback">
               Feedback
             </label>
             <textarea
               required
-              className="text-base px-2 py-0 bg-white font-medium whitespace-nowrap justify-center flex gap-1 items-center rounded-md border border-transparent focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 smy-input-outline py-4 px-2 mt-1"
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
               rows={3}
               value={feedback || ""}
               onChange={(e) => setFeedback(e.target.value)}
@@ -257,29 +257,29 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
           </div>
           {/* Honeypot field */}
           <div
-            className="col-span-full flex flex-col"
+            className="sr-col-span-full sr-flex sr-flex-col"
             style={{ display: "none" }}
           >
             <label htmlFor="honeypot">Leave this field blank</label>
             <input
-              className="text-base px-2 py-0 bg-white font-medium whitespace-nowrap justify-center flex gap-1 items-center rounded-md border border-transparent focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 py-4 px-2 mt-1"
+              className="sr-input sr-py-4 sr-px-2 sr-mt-1"
               type="text"
               value={isSpamBot ? "Spam Bot Detected" : ""}
               onChange={() => setIsSpamBot(true)}
               name="honeypot"
             />
           </div>
-          <div className="flex gap-4 justify-end col-span-full">
+          <div className="sr-flex sr-gap-4 sr-justify-end sr-col-span-full">
             {/* <button
               onClick={() => setExperience(null)}
               type="button"
-              className="smy-button smy-button-outline"
+              className="sr-button sr-button-outline"
             >
               Go back
             </button> */}
             <button
               type="submit"
-              className="smy-button smy-button-outline"
+              className="sr-button sr-button-outline"
               disabled={isSubmitting}
             >
               Submit
@@ -292,8 +292,8 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
 
   if (feedbackSent) {
     return (
-      <div className="text-center">
-        <h1 className="font-semibold text-2xl">
+      <div className="sr-text-center">
+        <h1 className="sr-font-semibold sr-text-2xl">
           Thank you for your feedback
         </h1>
         <p className="">
@@ -366,8 +366,8 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
 
     return (
       <div>
-        <div className="mb-8">
-          <h1 className="font-semibold text-2xl mb-2">
+        <div className="sr-mb-8">
+          <h1 className="sr-font-semibold sr-text-2xl mb-2">
             We're sorry we didn't meet your expectations
           </h1>
           <p>
@@ -377,61 +377,61 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
         </div>
 
         {error && (
-          <div className="bg-red-500 mb-2 rounded-lg p-4">
-            <p className="text-sm  text-white m-0">{error}</p>
+          <div className="sr-bg-red-500 sr-mb-2 sr-rounded-lg sr-p-4">
+            <p className="sr-text-sm  sr-text-white sr-m-0">{error}</p>
           </div>
         )}
 
         <form
-          className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-4 text-left"
+          className="sr-grid sr-grid-cols-1 sr-gap-y-4 sm:sr-grid-cols-2 sm:sr-gap-x-4 sr-text-left"
           onSubmit={onSubmit}
         >
-          <div className="flex flex-col">
-            <label className="text-lg font-medium text-gray-800" htmlFor="name">
+          <div className="sr-flex sr-flex-col">
+            <label className="sr-label" htmlFor="name">
               Name
             </label>
             <input
               required
-              className="text-base px-2 py-0 bg-white font-medium whitespace-nowrap justify-center flex gap-1 items-center rounded-md border border-transparent focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 smy-input-outline py-4 px-2 mt-1"
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
               type="text"
               value={name || ""}
               onChange={(e) => setName(e.target.value)}
               name="name"
             />
           </div>
-          <div className="flex flex-col">
-            <label className="text-lg font-medium text-gray-800" htmlFor="phone">
+          <div className="sr-flex sr-flex-col">
+            <label className="sr-label" htmlFor="phone">
               Email
             </label>
             <input
               required
-              className="text-base px-2 py-0 bg-white font-medium whitespace-nowrap justify-center flex gap-1 items-center rounded-md border border-transparent focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 smy-input-outline py-4 px-2 mt-1"
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
               type="text"
               value={email || ""}
               onChange={(e) => setEmail(e.target.value)}
               name="email"
             />
           </div>
-          <div className="col-span-full flex flex-col">
-            <label className="text-lg font-medium text-gray-800" htmlFor="phone">
+          <div className="sr-col-span-full sr-flex sr-flex-col">
+            <label className="sr-label" htmlFor="phone">
               Phone
             </label>
             <input
               required
-              className="text-base px-2 py-0 bg-white font-medium whitespace-nowrap justify-center flex gap-1 items-center rounded-md border border-transparent focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 smy-input-outline py-4 px-2 mt-1"
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
               type="text"
               value={phone || ""}
               onChange={(e) => setPhone(e.target.value)}
               name="phone"
             />
           </div>
-          <div className="col-span-full flex flex-col">
-            <label className="text-lg font-medium text-gray-800" htmlFor="feedback">
+          <div className="sr-col-span-full sr-flex sr-flex-col">
+            <label className="sr-label" htmlFor="feedback">
               Feedback
             </label>
             <textarea
               required
-              className="text-base px-2 py-0 bg-white font-medium whitespace-nowrap justify-center flex gap-1 items-center rounded-md border border-transparent focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 smy-input-outline py-4 px-2 mt-1"
+              className="sr-input sr-input-outline sr-py-4 sr-px-2 sr-mt-1"
               rows={3}
               value={feedback || ""}
               onChange={(e) => setFeedback(e.target.value)}
@@ -440,29 +440,29 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
           </div>
           {/* Honeypot field */}
           <div
-            className="col-span-full flex flex-col"
+            className="sr-col-span-full sr-flex sr-flex-col"
             style={{ display: "none" }}
           >
             <label htmlFor="honeypot">Leave this field blank</label>
             <input
-              className="text-base px-2 py-0 bg-white font-medium whitespace-nowrap justify-center flex gap-1 items-center rounded-md border border-transparent focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 py-4 px-2 mt-1"
+              className="sr-input sr-py-4 sr-px-2 sr-mt-1"
               type="text"
               value={isSpamBot ? "Spam Bot Detected" : ""}
               onChange={() => setIsSpamBot(true)}
               name="honeypot"
             />
           </div>
-          <div className="flex gap-4 justify-end col-span-full">
+          <div className="sr-flex sr-gap-4 sr-justify-end sr-col-span-full">
             {/* <button
               onClick={() => setExperience(null)}
               type="button"
-              className="smy-button smy-button-outline"
+              className="sr-button sr-button-outline"
             >
               Go back
             </button> */}
             <button
               type="submit"
-              className="smy-button smy-button-outline"
+              className="sr-button sr-button-outline"
               disabled={isSubmitting}
             >
               Submit
@@ -475,8 +475,8 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
 
   if (feedbackSent) {
     return (
-      <div className="text-center">
-        <h1 className="font-semibold text-2xl">
+      <div className="sr-text-center">
+        <h1 className="sr-font-semibold sr-text-2xl">
           Thank you for your feedback
         </h1>
         <p className="">
@@ -491,11 +491,11 @@ export default function FeedbackWizard({ data, organisationId, loading }: any) {
     <>
       {loading && <Loading />}
       {!loading && data && (
-        <div className="h-[36rem] text-xl flex flex-col justify-center text-center">
+        <div className="sr-h-[36rem] sr-text-xl sr-flex sr-flex-col sr-justify-center sr-text-center">
           {!experience ? (
             <div>
-              <div className="mb-8">
-                <h1 className="font-semibold text-2xl mb-1">
+              <div className="sr-mb-8">
+                <h1 className="sr-font-semibold sr-text-2xl mb-1">
                   How did we do?
                 </h1>
                 <p className="">

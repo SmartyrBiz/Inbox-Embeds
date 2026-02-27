@@ -1,3 +1,4 @@
+import "./App.css";
 import WidgetSwitch from "./WidgetSwitch";
 
 export default function App({ embed, data, loading }: any) {

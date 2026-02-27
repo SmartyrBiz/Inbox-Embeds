@@ -1,17 +1,10 @@
-# Smartyr Review Embeds
+Smartyr Review embed project
 
-Embeddable review widgets served via CDN.
+Npm run start to start react app
 
-## Development
+##Viewing Live Version
 
-```bash
-bun start
-```
+##Publishing updates,
 
-## Build
-
-```bash
-bun run build
-```
-
-This updates `dist/index.js` and `dist/index.css`. Create a PR to main to publish the updated files to the CDN.
+1. From your local branch run build (npm run build) to update the dist/index.css and dist/index.js files.
+2. Then, create a PR to the main branch and push the changes to update the files hosted on cdn.

@@ -41,32 +41,32 @@ export default function ReviewGrid({ data, loading }: any) {
       data.reviews.length > 0 &&
       data.totalReviewCount > 0 ? (
         <div>
-          <div className="sr-flex sr-flex-col lg:sr-flex-row sr-gap-2 sr-justify-between  sr-place-items-start lg:sr-place-items-center sr-mb-6">
+          <div className="flex flex-col lg:flex-row gap-2 justify-between  place-items-start lg:place-items-center mb-6">
             <div className="">
-              <h3 className="sr-heading-regular">
+              <h3 className="text-xl font-semibold tracking-tight text-gray-800 my-0">
                 Customer testimonials on Google
               </h3>
-              <p className="sr-mt-0 sr-mb-0">{data.totalReviewCount} reviews</p>
+              <p className="mt-0 mb-0">{data.totalReviewCount} reviews</p>
             </div>
-            <div className="sr-flex sr-gap-2">
+            <div className="flex gap-2">
               <a
                 href={data.locationUrl}
                 target="_blank"
-                className="sr-button sr-button-outline"
+                className="smy-button smy-button-outline"
               >
                 All reviews
               </a>
               <a
                 href={data.newReviewUrl}
                 target="_blank"
-                className="sr-button sr-button-outline"
+                className="smy-button smy-button-outline"
               >
                 Leave a review
               </a>
             </div>
           </div>
 
-          <div className="sr-grid lg:sr-grid-cols-2 sr-gap-4">
+          <div className="grid lg:grid-cols-2 gap-4">
             {data.reviews
               .slice(0, showedCount)
               .map((review: any, index: number) => {
@@ -75,24 +75,24 @@ export default function ReviewGrid({ data, loading }: any) {
                 );
                 return (
                   <div
-                    className="sr-border sr-bg-white sr-rounded-md sr-p-4 sr-flex sr-flex-col sr-place-items-start sr-space-y-3"
+                    className="border border-gray-200 bg-white rounded-md p-4 flex flex-col place-items-start space-y-3"
                     key={review.name}
                   >
-                    <div className="sr-flex sr-w-full sr-justify-between sr-gap-2 sr-place-items-center">
-                      <div className="sr-flex sr-place-items-center sr-gap-2">
+                    <div className="flex w-full justify-between gap-2 place-items-center">
+                      <div className="flex place-items-center gap-2">
                         <img
                           src={processedAvatarUrl}
                           alt={review.reviewer.name}
                           loading="lazy"
-                          className="sr-h-10 sr-w-10 sr-rounded-full sr-bg-gray-500"
+                          className="h-10 w-10 rounded-full bg-gray-500"
                           referrerPolicy="no-referrer"
                           crossOrigin="anonymous"
                         />
                         <div>
-                          <p className="sr-font-medium sr-my-0">
+                          <p className="font-medium my-0">
                             {review.reviewer.name}
                           </p>
-                          <p className="sr-text-gray-400 sr-text-xs sr-my-0">
+                          <p className="text-gray-400 text-xs my-0">
                             {dateFormatter(review.createdAt)}
                           </p>
                         </div>
@@ -121,12 +121,12 @@ export default function ReviewGrid({ data, loading }: any) {
                         />
                       </svg>
                     </div>
-                    <div className="sr-flex">
+                    <div className="flex">
                       {new Array(RATINGS[review.rating as keyof typeof RATINGS])
                         .fill(null)
                         .map((star, index) => (
                           <StarIcon
-                            className="sr-h-5 sr-w-5 sr-text-yellow-500"
+                            className="h-5 w-5 text-yellow-500"
                             key={index}
                           />
                         ))}
@@ -135,8 +135,8 @@ export default function ReviewGrid({ data, loading }: any) {
                     <p
                       className={
                         readMoreReviews.includes(review.name)
-                          ? "sr-line-clamp-none"
-                          : "sr-line-clamp-4"
+                          ? "line-clamp-none"
+                          : "line-clamp-4"
                       }
                     >
                       {review.comment}
@@ -144,7 +144,7 @@ export default function ReviewGrid({ data, loading }: any) {
                     {review.comment && review.comment.length > 250 && (
                       <button
                         onClick={() => handleReadMore(review.name)}
-                        className="sr-button sr-text-sm"
+                        className="smy-button text-sm"
                       >
                         {readMoreReviews.includes(review.name)
                           ? "Show less"
@@ -156,9 +156,9 @@ export default function ReviewGrid({ data, loading }: any) {
               })}
           </div>
 
-          <div className="sr-py-6 sr-flex sr-justify-center">
+          <div className="py-6 flex justify-center">
             <button
-              className="sr-button sr-button-outline"
+              className="smy-button smy-button-outline"
               onClick={() => handleShowMore()}
             >
               {showedCount < data.reviews.length ? "Show more" : "Show less"}

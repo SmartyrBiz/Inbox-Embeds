@@ -9,6 +9,11 @@
   --width-lg: 420px;
 }
 
+/* Force star SVGs inline — customer sites often have svg { display: block } resets */
+.star-svg {
+  display: inline-block !important;
+}
+
 @layer components {
   .smy-button {
     @apply no-underline cursor-pointer text-sm px-0 py-0 bg-white font-medium whitespace-nowrap justify-center flex gap-1 text-center inline-flex items-center rounded-md border border-transparent focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1;

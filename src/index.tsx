@@ -64,7 +64,7 @@ window.addEventListener("load", function () {
     } else if (element.dataset.brand) {
       // DXP v2 API
       const response = await fetch(
-        `http://localhost:3001/api/v1/reviews/${element.dataset.brand}`,
+        `https://beta-dxp.smartyr.app/api/v1/reviews/${element.dataset.brand}`,
       );
       const data = await response.json();
       return data;

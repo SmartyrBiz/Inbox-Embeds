@@ -6,11 +6,11 @@ import {
 import { dateFormatter } from "../utilities/dateFormatter";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Swiper as SwiperType, Navigation, Pagination, Autoplay } from "swiper";
+import type SwiperClass from "swiper";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import RATINGS from "../utilities/RATINGS";
 import Loading from "../utilities/LoadingSpinner";
-import "swiper/swiper.min.css";
-import "swiper/swiper-bundle.min.css";
+import "swiper/css/bundle";
 
 const processGoogleAvatar = (url: string) => {
   if (!url || !url.includes("googleusercontent.com")) return url;
@@ -21,11 +21,11 @@ const processGoogleAvatar = (url: string) => {
 };
 
 export default function ReviewSlider({ data, loading }: any) {
-  const swiperRef = useRef<SwiperType>();
+  const swiperRef = useRef<SwiperClass>();
   return (
     <>
       {loading && (
-        <div className="sr-w-full sr-h-96 sr-flex sr-place-items-center sr-justify-center">
+        <div className="w-full h-96 flex place-items-center justify-center">
           <Loading />
         </div>
       )}
@@ -36,38 +36,38 @@ export default function ReviewSlider({ data, loading }: any) {
       data.reviews.length > 0 &&
       data.totalReviewCount > 0 ? (
         <>
-          <div className="sr-flex sr-flex-col sr-place-items-center sr-justify-center sr-text-center lg:sr-justify-between lg:sr-text-left lg:sr-place-items-end lg:sr-flex-row sr-gap-4 sr-mb-8">
+          <div className="flex flex-col place-items-center justify-center text-center lg:justify-between lg:text-left lg:place-items-end lg:flex-row gap-4 mb-8">
             <div>
-              <h2 className="sr-heading-large">Our Latest Google Reviews</h2>
+              <h2 className="text-2xl font-semibold tracking-tight text-gray-800 my-0">Our Latest Google Reviews</h2>
 
-              <p className="sr-mt-0 sr-py-0 sr-mb-0">
+              <p className="mt-0 py-0 mb-0">
                 Rated {String(data.averageRating).slice(0, 4)} Stars from{" "}
                 {data.totalReviewCount} reviews
               </p>
             </div>
-            <div className="sr-flex sr-gap-2">
+            <div className="flex gap-2">
               <a
                 href={data.locationUrl}
                 target="_blank"
-                className="sr-button sr-button-outline"
+                className="smy-button smy-button-outline"
               >
                 All reviews
               </a>
               <a
                 href={data.newReviewUrl}
                 target="_blank"
-                className="sr-button sr-button-outline"
+                className="smy-button smy-button-outline"
               >
                 Leave a review
               </a>
             </div>
           </div>
-          <div className="sr-flex sr-gap-2 sr-place-items-center">
+          <div className="flex gap-2 place-items-center">
             <button
-              className="duration-300 sr-flex sr-place-items-center sr-justify-center sr-flex-shrink-0 sr-rounded-full sr-border-none sr-p-2 hover:sr-bg-gray-50 transition-ease sr-bg-white sr-cursor-pointer"
+              className="duration-300 flex place-items-center justify-center flex-shrink-0 rounded-full border-none p-2 hover:bg-gray-50 transition bg-white cursor-pointer"
               onClick={() => swiperRef.current?.slidePrev()}
             >
-              <ChevronLeftIcon className="sr-h-6 sr-w-6 " />
+              <ChevronLeftIcon className="h-6 w-6 " />
             </button>
             <Swiper
               slidesPerView={1}
@@ -107,41 +107,41 @@ export default function ReviewSlider({ data, loading }: any) {
                 );
                 return (
                   <SwiperSlide key={review.name}>
-                    <div className="sr-p-6 sr-bg-white sr-border sr-rounded-md sr-h-full sr-flex sr-flex-col sr-justify-between">
+                    <div className="p-6 bg-white border border-gray-200 rounded-md h-full flex flex-col justify-between">
                       <div>
-                        <div className="sr-flex sr-place-items-center sr-gap-2 sr-mb-4">
+                        <div className="flex place-items-center gap-2 mb-4">
                           <img
                             src={processedAvatarUrl}
                             alt={review.reviewer.name}
                             loading="lazy"
-                            className="sr-h-10 sr-w-10 sr-rounded-full sr-bg-gray-500"
+                            className="h-10 w-10 rounded-full bg-gray-500"
                             referrerPolicy="no-referrer"
                             crossOrigin="anonymous"
                           />
                           <div>
-                            <p className="sr-font-medium sr-mb-0 sr-mt-0">
+                            <p className="font-medium mb-0 mt-0">
                               {review.reviewer.name}
                             </p>
-                            <div className="sr-flex">
+                            <div className="flex">
                               {new Array(
                                 RATINGS[review.rating as keyof typeof RATINGS]
                               )
                                 .fill(null)
                                 .map((star, index) => (
                                   <StarIcon
-                                    className="sr-h-5 sr-w-5 sr-text-yellow-500"
+                                    className="h-5 w-5 text-yellow-500"
                                     key={index}
                                   />
                                 ))}
                             </div>
                           </div>
                         </div>
-                        <p className="sr-line-clamp-6 sr-mb-6">
+                        <p className="line-clamp-6 mb-6">
                           {review.comment}
                         </p>
                       </div>
-                      <div className="sr-flex sr-justify-between sr-place-items-center">
-                        <div className="sr-flex sr-gap-2 sr-place-items-center">
+                      <div className="flex justify-between place-items-center">
+                        <div className="flex gap-2 place-items-center">
                           <svg
                             width="36"
                             height="36"
@@ -165,11 +165,11 @@ export default function ReviewSlider({ data, loading }: any) {
                               fill="#1976D2"
                             />
                           </svg>
-                          <p className="sr-text-xs sr-text-gray-500 sr-py-0 sr-mb-0">
+                          <p className="text-xs text-gray-500 py-0 mb-0">
                             Google Review
                           </p>
                         </div>
-                        <p className="sr-text-xs sr-text-gray-500 sr-py-0 sr-mb-0">
+                        <p className="text-xs text-gray-500 py-0 mb-0">
                           {dateFormatter(review.createdAt)}
                         </p>
                       </div>
@@ -177,13 +177,13 @@ export default function ReviewSlider({ data, loading }: any) {
                   </SwiperSlide>
                 );
               })}
-              <div className="swiper-pagination-custom sr-justify-center sr-flex sr-mt-4 sr-flex-shrink-0"></div>
+              <div className="swiper-pagination-custom justify-center flex mt-4 flex-shrink-0"></div>
             </Swiper>
             <button
-              className="duration-300 sr-flex sr-place-items-center sr-justify-center sr-flex-shrink-0 sr-rounded-full sr-border-none sr-p-2 hover:sr-bg-gray-50 transition-ease sr-bg-white sr-cursor-pointer"
+              className="duration-300 flex place-items-center justify-center flex-shrink-0 rounded-full border-none p-2 hover:bg-gray-50 transition bg-white cursor-pointer"
               onClick={() => swiperRef.current?.slideNext()}
             >
-              <ChevronRightIcon className="sr-h-6 sr-w-6 " />
+              <ChevronRightIcon className="h-6 w-6 " />
             </button>
           </div>
         </>

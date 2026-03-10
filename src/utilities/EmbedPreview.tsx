@@ -16,11 +16,7 @@ export default function EmbedPreview({
     // Fetch data from reddit
     setLoading(true);
     fetch(
-      `https://inbox-api.smartyr.biz/api/v1/review/${
-        process.env.NODE_ENV === "development"
-          ? "b73206af-bd61-4400-a8ab-3c994f25ab56"
-          : googleCredential.publicReviewAPIKey
-      }`
+      `https://inbox-api.smartyr.biz/api/v1/review/${googleCredential.publicReviewAPIKey}`
     )
       .then((response) => response.json())
       .then((data) => {

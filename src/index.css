@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force star SVGs inline — customer sites often have svg { display: block } resets */
+.star-svg {
+  display: inline-block !important;
+}
+
 @layer components {
   .sr-button {
     @apply sr-no-underline sr-cursor-pointer sr-text-sm sr-px-0 sr-py-0 sr-bg-white sr-font-medium sr-whitespace-nowrap sr-justify-center sr-flex sr-gap-1  sr-text-center sr-inline-flex sr-items-center sr-rounded-md sr-border sr-border-transparent focus:sr-outline-none focus:sr-ring-1 focus:sr-ring-white focus:sr-ring-offset-1;
